@@ -4,17 +4,17 @@
 ClassicDriver Docker container with Java installed.
 
 == Name/Tag
-The naming strategy will be <organisation>/<os-distribution>-<os-version>-<feature>:<version-tag>.
+The naming strategy will be <organisation>/<feature>:<version-tag>.
 The 'version-tag' is optional
 ....
-classicdriver/debian-wheezy-java:1.8.60
+classicdriver/java:1.8.60
 ....
 
 == How to BUILD this image
 . Clone the Git repository
 +
 ....
-git clone http://<git.host>/docker-debian-wheezy-java.git
+git clone http://<git.host>/docker-java.git
 ....
 . Browse to the cloned repository
 +
@@ -24,12 +24,12 @@ cd <parent-folder>
 . Build the docker image with the command
 +
 ....
-docker build --rm=true --tag=classicdriver/debian-wheezy-java:1.8.60 docker-debian-wheezy-java/.
+docker build --rm=true --tag=classicdriver/java:1.8.60 docker-java/.
 ....
 . Test the docker image by running the command
 +
 ....
-docker run -it --rm=true classicdriver/debian-wheezy-java:1.8.60
+docker run -it --rm=true classicdriver/java:1.8.60
 ....
 . The console will be attached to the running container
 . Run the following command
