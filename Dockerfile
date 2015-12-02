@@ -17,14 +17,15 @@ ENV APP_RELATIVE_URL ${APP_MAJOR_VERSION}u${APP_MINOR_VERSION}-${APP_BUILD_VERSI
 ENV APP_FULL_INSTALL_PATH ${APP_INSTALL_DIR}/jdk1.${APP_MAJOR_VERSION}.0_${APP_MINOR_VERSION}
 
 # Move into the tmp directory
-WORKDIR /tmp
+# WORKDIR /tmp
 
 # Create installation directory
 # Download java from Oracle (for example http://download.oracle.com/otn-pub/java/jdk/8u60-b27/server-jre-8u60-linux-x64.tar.gz)
 # Extract the downloaded tar file into the installation directory:
-RUN	mkdir -p ${APP_INSTALL_DIR} \
+RUN	mkdir -p ${APP_INSTALL_DIR}                       \
     && wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/${APP_RELATIVE_URL} \
-    && tar -zxf ${APP_ARCHIVE} -C ${APP_INSTALL_DIR}
+    && tar -zxf ${APP_ARCHIVE} -C ${APP_INSTALL_DIR}  \
+    && rm -rf ${APP_ARCHIVE}.tar.gz
 
 # Set $JAVA_HOME environment variable
 ENV JAVA_HOME ${APP_FULL_INSTALL_PATH}
