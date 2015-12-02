@@ -1,7 +1,7 @@
 ##########################################################################################
 # ClassicDriver Base Docker image with Java installed (Server JRE)
 ##########################################################################################
-FROM classicdriver/debian-wheezy-base
+FROM classicdriver/base
 
 MAINTAINER Team Nitrous <nitrous@classicdriver.com>
 
